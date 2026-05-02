@@ -1,0 +1,76 @@
+<div class="page-container">
+
+  <!-- Header Section -->
+  <div class="header">
+    <h2 class="title">User Management</h2>
+    <button mat-raised-button color="primary" class="add-btn" (click)="handleAddNavigation()">
+      + Add Employee
+    </button>
+  </div>
+
+  <!-- Table Card -->
+  <div class="table-card">
+    <table mat-table [dataSource]="dataSource" class="custom-table">
+
+      <!-- Employee Name -->
+      <ng-container matColumnDef="employeeName">
+        <th mat-header-cell *matHeaderCellDef> Employee Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeName}} </td>
+      </ng-container>
+
+      <!-- Employee Role -->
+      <ng-container matColumnDef="employeeRole">
+        <th mat-header-cell *matHeaderCellDef> Employee Role </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeRole}} </td>
+      </ng-container>
+
+      <!-- Gender -->
+      <ng-container matColumnDef="employeeGender">
+        <th mat-header-cell *matHeaderCellDef> Employee Gender </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeGender}} </td>
+      </ng-container>
+
+      <!-- Salary -->
+      <ng-container matColumnDef="employeeSalary">
+        <th mat-header-cell *matHeaderCellDef> Employee Salary </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeSalary}} </td>
+      </ng-container>
+
+      <!-- DOB -->
+      <ng-container matColumnDef="employeeDob">
+        <th mat-header-cell *matHeaderCellDef> Employee DOB </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeDob}} </td>
+      </ng-container>
+
+      <!-- Phone -->
+      <ng-container matColumnDef="employeePhno">
+        <th mat-header-cell *matHeaderCellDef> Employee Phone Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeePhno}} </td>
+      </ng-container>
+
+        <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element"> 
+          <div class="action_column">
+  <button mat-icon-button color="primary" (click)="handleEdit(element)">
+  <mat-icon>edit</mat-icon>
+</button>
+
+<button mat-icon-button color="warn" (click)="handleDelete(element)">
+  <mat-icon>delete</mat-icon>
+</button>
+           </div>
+           </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+       <tr class="mat-row" *matNoDataRow>
+  <td class="mat-cell no-data" [attr.colspan]="displayedColumns.length">
+    No Records Found
+  </td>
+</tr>
+    </table>
+  </div>
+
+</div>

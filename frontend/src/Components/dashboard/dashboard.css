@@ -1,0 +1,79 @@
+/* Page spacing */
+.page-container {
+  padding: 40px;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Header layout */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+}
+
+.add-btn {
+  padding: 10px;
+  border:none;
+  border-radius: 10px;
+  font-weight: 500;
+  background-color: #1976d2 !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+/* Table container (no padding, no border) */
+.table-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* important */
+}
+
+/* Table full width */
+.custom-table {
+  width: 100%;
+}
+
+/* Header Styling */
+th.mat-header-cell {
+  background-color: #1976d2;  /* Different header color */
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center !important;
+}
+
+/* Cell Styling */
+td.mat-cell {
+  text-align: center !important;
+  font-size: 14px;
+}
+
+/* Row height */
+tr.mat-row {
+  height: 55px;
+}
+
+/* Hover effect */
+tr.mat-row:hover {
+  background-color: #f1f5fb;
+  transition: 0.2s ease-in-out;
+}
+::ng-deep .mat-mdc-header-cell {
+  background-color: #1976d2 !important;
+  color: white !important;
+  text-align: center !important;
+}
+
+::ng-deep .mat-mdc-cell {
+  text-align: center !important;
+}
